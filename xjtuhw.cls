@@ -15,6 +15,9 @@
 %%% Spacing %%%
 \RequirePackage{setspace}
 
+%%% Math %%%
+\RequirePackage{amsmath}
+
 %%% l10n here %%%
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{图}

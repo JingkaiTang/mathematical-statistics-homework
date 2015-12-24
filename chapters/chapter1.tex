@@ -1,5 +1,14 @@
 \section{数理统计的基本概念}
 
-  \textbf{1.1} 设总体$X\sim{}N(\mu, \sigma{}^2)$，$X_{1}$，...，$X_{n}$为总体$X$的一个样本，$\bar{X}$为样本均值，如要
+  \textbf{1.1} 设总体$X\sim{}N(\mu{}, \sigma{}^2)$，$X_{1}$，...，$X_{n}$为总体$X$的一个样本，$\bar{X}$为样本均值，如要
   $$ P\{|\bar{X}-\mu{}|<1\} = 0.95 $$
   则样本容量$n$应取多大？
+  
+  \textbf{解：}
+  由\textbf{定理 1.2.4}得$\bar{X}\sim{}N(\mu{}, \frac{\sigma{}^2}{n})$，所以
+  \[ \begin{split}
+    a &= (1-0.95)\div{2}\\
+      &= 0.025\\
+    \mu{}_{\alpha{}=0.025} &= 1.96\\
+    n &= \lceil{}1.96^2\cdot{}\sigma{}^2\rceil{}
+  \end{split} \]
