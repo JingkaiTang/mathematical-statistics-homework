@@ -15,8 +15,20 @@
 %%% Spacing %%%
 \RequirePackage{setspace}
 
-%%% Math %%%
-\RequirePackage{amsmath}
+%%% PDF links %%%
+\RequirePackage{hyperref}
+\hypersetup{
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    bookmarksopenlevel=1,
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=blue,
+    anchorcolor=blue,
+    plainpages=false,
+    pdfpagelabels,
+    pdfborder=0 0 0,
+}
 
 %%% l10n here %%%
 \renewcommand{\tablename}{表}
@@ -48,10 +60,12 @@
 
 %%% Seciton %%%
 \makeatletter
-\renewcommand\section{\@startsection{section}{1}{\z@}%
-{-1.5ex \@plus -.5ex \@minus -.2ex}%
-{.5ex \@plus .1ex}%
-{\normalfont\sihao}}
+\renewcommand\section{
+  \@startsection{section}{1}{\z@}%
+  {-1.5ex \@plus -.5ex \@minus -.2ex}%
+  {.5ex \@plus .1ex}%
+  {\normalfont\sihao}
+}
 \makeatother
 
 %%% Subsection %%%
@@ -116,3 +130,18 @@
     \setcounter{page}{1}
     \topmargin=-54pt
 }
+
+%%% Table of Contents %%%
+\RequirePackage{titlesec,titletoc}
+\newcommand{\xjtutoc}{
+  \pagenumbering{Roman}
+  \tableofcontents
+  \newpage
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
+}
+\titlecontents{section}[1.5em]{}{\thecontentslabel\quad}{}{\dotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
+\titlecontents{subsection}[3.8em]{}{\thecontentslabel\quad}{}{\dotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
+
+%%% Math %%%
+\RequirePackage{amsmath}
