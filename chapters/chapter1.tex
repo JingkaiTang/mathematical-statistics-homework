@@ -1,11 +1,11 @@
 \section{数理统计的基本概念}
 
-  \textbf{1.1} 设总体$X \sim N(\mu, \sigma^2)$，$X_{1}$，...，$X_{n}$为总体$X$的一个样本，$\bar{X}$为样本均值，如要
+  \xtl{1.1} 设总体$X \sim N(\mu, \sigma^2)$，$X_{1}$，...，$X_{n}$为总体$X$的一个样本，$\bar{X}$为样本均值，如要
   $$ P\{|\bar{X} - \mu| < 1\} = 0.95 $$
   则样本容量$n$应取多大？
   
-  \textbf{解：}
-  由\textbf{定理 1.2.4}得$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$，所以$\frac{\sqrt{n} \cdot (\bar{X} - \mu)}{\sigma} \sim N(0, 1)$，又由条件$P\{|\bar{X} - \mu| < 1\} = 0.95$可得，$P\{|\frac{\sqrt{n} \cdot (\bar{X} - \mu)}{\sigma}| < \frac{\sqrt{n}}{\sigma}\} = 0.95$，有
+  \xsv
+  由\xtm{1.2.4}得$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$，所以$\frac{\sqrt{n} \cdot (\bar{X} - \mu)}{\sigma} \sim N(0, 1)$，又由条件$P\{|\bar{X} - \mu| < 1\} = 0.95$可得，$P\{|\frac{\sqrt{n} \cdot (\bar{X} - \mu)}{\sigma}| < \frac{\sqrt{n}}{\sigma}\} = 0.95$，有
   \[ \begin{split}
     \alpha &= (1 - 0.95) \div 2\\
     &= 0.025\\
@@ -13,3 +13,68 @@
     1.96 &< \frac{\sqrt{n}}{\sigma}\\
     n &= \lceil (1.96 \cdot \sigma)^2 \rceil
   \end{split} \]
+
+  \xtl{1.2} 设电子元件的寿命（小时）$X \sim Exp(0.0015)$，独立测试6个元件并记下它们的失效时间，试求：
+  
+  (1) 至800小时，没有一个元件失效的概率；
+  
+  (2) 至3000小时，所有元件都失效的概率.
+  
+  \xsv
+  (1) 由题意知$F(x) = e^{-0.0015 \cdot x}$，则
+  \[ \begin{split}
+    P\{X_{1}, X_{2}, X_{3}, X_{4}, X_{5}, X_{6}; X \geq 800\} &= (F(800))^6\\
+    &= (e^{-0.0015 \times 800})^6\\
+    &= e^{-7.2}
+  \end{split} \]
+  
+  (2)
+  \[ \begin{split}
+    P\{X_{1}, X_{2}, X_{3}, X_{4}, X_{5}, X_{6}; X < 3000\} &= (1 - F(3000))^6\\
+    &= (1 - e^{-0.0015 \times 3000})^6\\
+    &= (1 - e^{-4.5})^6
+  \end{split} \]
+   
+  \xtl{1.4} 设总体$X$服从对数正态分布，即$X$具有概率密度
+  \[ 
+    f(x) = 
+    \begin{cases}
+      \frac{1}{x \sqrt{2\pi} \sigma} e^{-\frac{(\ln{x} - \mu)^2}{2 \sigma^2}},\quad &0 < x < \infty\\
+      0,\quad &\text{其他}
+    \end{cases}
+  \]
+  $X_1, ..., X_n$为总体$X$的一个样本，试写出$X_1, ...,X_n$的联合概率密度.
+  
+  \xsv
+  \[ \begin{split}
+    x > 0,\quad
+    \prod_{i=1}^{n}{f(x_i)} &= \prod_{i=1}^{n}{\frac{1}{x_i \sqrt{2\pi} \sigma} \cdot e^{-\frac{(\ln{x_i} - \mu)^2}{2 \sigma^2}}}\\
+    &= \frac{
+      e^{-\frac{1}{2 \sigma^2} \cdot \sum\limits_{i=1}^{n}{(\ln{x_i} - \mu)^2}}
+    }{
+      (2 \pi \sigma^2)^{\frac{n}{2}} \cdot \prod_{i=1}^{n}{x_i}
+    }
+  \end{split} \]
+  则：
+  \[
+    f(x_1, ..., x_n) =
+    \begin{cases}
+      \frac{
+	e^{-\frac{1}{2 \sigma^2} \cdot \sum\limits_{i=1}^{n}{(\ln{x_i} - \mu)^2}}
+      }{
+	(2 \pi \sigma^2)^{\frac{n}{2}} \cdot \prod_{i=1}^{n}{x_i}
+      },\quad &0 < x < \infty\\
+      0,\quad &\text{其他}
+    \end{cases}
+  \]
+  
+  \xtl{1.6} 证明下列等式
+  
+  (1) $\sumin{(X_i - \mu)} = \sumin{(X_i - \bar{X})^2 + n(\bar{X} - \mu)^2}$；
+  
+  (2) $\sumin{(X_i - \bar{X})^2} = \sum\limits_{i=1}^{n}{X_i^2 - n\bar{X}^2}$.
+
+  \xsv
+  
+
+
