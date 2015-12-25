@@ -19,10 +19,14 @@
 \newcommand{\xtm}[1]{\textbf{定理 {#1}}}
 
 %%% useful tricks %%%
+% sum
 \newcommand{\sumxyz}[3]{\sum\limits_{#1=#2}^{#3}}
 \newcommand{\sumxy}[2]{\sumxyz{#1}{1}{#2}}
-\def\sumin{\sumxy{i}{n}}
-
+\newcommand{\sumin}{\sumxy{i}{n}}
+% prod
+\newcommand{\prodxyz}[3]{\prod_{#1=#2}^{#3}}
+\newcommand{\prodxy}[2]{\prodxyz{#1}{1}{#2}}
+\newcommand{\prodin}{\prodxy{i}{n}}
 
 \begin{document}
 

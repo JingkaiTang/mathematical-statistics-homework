@@ -46,31 +46,30 @@
   $X_1, ..., X_n$为总体$X$的一个样本，试写出$X_1, ...,X_n$的联合概率密度.
   
   \xsv
+  \def\teq14{
+    \frac{
+      e^{-\frac{1}{2 \sigma^2} \cdot \sumin{(\ln{x_i} - \mu)^2}}
+    }{
+      (2 \pi \sigma^2)^{\frac{n}{2}} \cdot \prodin{x_i}
+    }
+  }
   \[ \begin{split}
     x > 0,\quad
-    \prod_{i=1}^{n}{f(x_i)} &= \prod_{i=1}^{n}{\frac{1}{x_i \sqrt{2\pi} \sigma} \cdot e^{-\frac{(\ln{x_i} - \mu)^2}{2 \sigma^2}}}\\
-    &= \frac{
-      e^{-\frac{1}{2 \sigma^2} \cdot \sum\limits_{i=1}^{n}{(\ln{x_i} - \mu)^2}}
-    }{
-      (2 \pi \sigma^2)^{\frac{n}{2}} \cdot \prod_{i=1}^{n}{x_i}
-    }
+    \prodin{f(x_i)} &= \prodin{\frac{1}{x_i \sqrt{2\pi} \sigma} \cdot e^{-\frac{(\ln{x_i} - \mu)^2}{2 \sigma^2}}}\\
+    &= \teq14
   \end{split} \]
   则：
   \[
     f(x_1, ..., x_n) =
     \begin{cases}
-      \frac{
-	e^{-\frac{1}{2 \sigma^2} \cdot \sum\limits_{i=1}^{n}{(\ln{x_i} - \mu)^2}}
-      }{
-	(2 \pi \sigma^2)^{\frac{n}{2}} \cdot \prod_{i=1}^{n}{x_i}
-      },\quad &0 < x < \infty\\
+      \teq14,\quad &0 < x < \infty\\
       0,\quad &\text{其他}
     \end{cases}
   \]
   
   \xtl{1.6} 证明下列等式
   
-  (1) $\sumin{(X_i - \mu)} = \sumin{(X_i - \bar{X})^2 + n(\bar{X} - \mu)^2}$；
+  (1) $\sumin{(X_i - \mu)^2} = \sumin{(X_i - \bar{X})^2 + n(\bar{X} - \mu)^2}$；
   
   (2) $\sumin{(X_i - \bar{X})^2} = \sum\limits_{i=1}^{n}{X_i^2 - n\bar{X}^2}$.
 
