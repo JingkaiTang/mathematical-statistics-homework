@@ -11,6 +11,10 @@
 %%% Table %%%
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
+\RequirePackage{threeparttable}
+
+%%% Figure %%%
+\RequirePackage{subfig}
 
 %%% Spacing %%%
 \RequirePackage{setspace}
@@ -30,10 +34,37 @@
     pdfborder=0 0 0,
 }
 
+%%% Code Snippets %%%
+% code snippets
+\RequirePackage{newfloat, caption}
+\RequirePackage[newfloat]{minted}
+\newenvironment{code}{
+  \captionsetup{type=listing}
+}{}
+\BeforeBeginEnvironment{code}{\linespread{1.0}}
+\AfterEndEnvironment{code}{\linespread{1.2}}
+\renewcommand{\theFancyVerbLine}{
+  \sffamily\textcolor[rgb]{0.5,0.5,0.5}{\scriptsize\arabic{FancyVerbLine}}
+}
+\SetupFloatingEnvironment{listing}{
+  name=代码,
+  listname=代码列表,
+  placement=H,
+}
+\setminted{
+  breaklines=true,
+  linenos=true,
+  numbersep=2pt,
+  frame=lines,
+  framesep=3mm,
+  fontsize=\xiaowu
+}
+
 %%% l10n here %%%
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{图}
 \renewcommand\contentsname{目\quad 录}
+
 
 %%% Font-size %%%
 \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
@@ -61,27 +92,31 @@
 %%% Seciton %%%
 \makeatletter
 \renewcommand\section{
-  \@startsection{section}{1}{\z@}%
-  {-1.5ex \@plus -.5ex \@minus -.2ex}%
-  {.5ex \@plus .1ex}%
-  {\normalfont\sihao}
+  \@startsection{section}{1}{\z@}
+    {-1.5ex \@plus -.5ex \@minus -.2ex}
+    {.5ex \@plus .1ex}
+    {\normalfont\sihao}
 }
 \makeatother
 
 %%% Subsection %%%
 \makeatletter
-\renewcommand\subsection{\@startsection{subsection}{1}{\z@}%
-{-1.25ex \@plus -.5ex \@minus -.2ex}%
-{.4ex \@plus .1ex}%
-{\normalfont\xiaosi}}
+\renewcommand\subsection{
+  \@startsection{subsection}{1}{\z@}
+    {-1.25ex \@plus -.5ex \@minus -.2ex}
+    {.4ex \@plus .1ex}
+    {\normalfont\xiaosi}
+}
 \makeatother
 
 %%% Subsubsection %%%
 \makeatletter
-\renewcommand\subsubsection{\@startsection{subsubsection}{1}{\z@}%
-{-1ex \@plus -.5ex \@minus -.2ex}%
-{.3ex \@plus .1ex}%
-{\normalfont\xiaosi}}
+\renewcommand\subsubsection{
+  \@startsection{subsubsection}{1}{\z@}
+  {-1ex \@plus -.5ex \@minus -.2ex}
+  {.3ex \@plus .1ex}
+  {\normalfont\xiaosi}
+}
 \makeatother
 
 %%% Indent %%%
@@ -103,13 +138,14 @@
 \setlength{\parskip}{0.5\baselineskip}
 
 %%% Cover %%%
-\newcommand\xjtucover{
+% input logo file
+\newcommand\xjtucover[1]{
     \thispagestyle{empty}
     \topmargin=0.5in
     \begin{center}
         \begin{figure}[h!]
           \centering
-          \includegraphics[width=6.67cm]{XJTU.pdf}
+          \includegraphics[width=6.67cm]{#1}
         \end{figure}
 
         \vskip 3cm
@@ -142,6 +178,8 @@
 }
 \titlecontents{section}[1.5em]{}{\thecontentslabel\quad}{}{\dotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
 \titlecontents{subsection}[3.8em]{}{\thecontentslabel\quad}{}{\dotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
+\titlecontents{subsubsection}[7.1em]{}{\thecontentslabel\quad}{}{\dotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
 
 %%% Math %%%
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
