@@ -91,6 +91,46 @@
     &= \sumin{X_i^2} - n\bar{X}^2
   \end{split} \]
 
+  \xtl{1.7} 设$\bar{X}_n$和$S_n^2$分别为样本 \listXn 的样本均值和样本方差，再抽出一个样品$X_{n+1}$，记样本 \listXx{n+1} 的样本均值和样本方差为分别$\bar{X}_{n+1}$和$S_{n+1}^2$，求证：
+  \[ 
+    \begin{split}
+      \bar{X}_{n+1} &= \bar{X}_n + \frac{1}{n+1} (X_{n+1} - \bar{X}_n)\\
+      S_{n+1}^2 &= \frac{n}{n+1} [S_n^2 + \frac{1}{n+1} (X_{n+1} - \bar{X}_n)^2]
+    \end{split}
+  \]
+  
+  \xsv
+  (1)
+  \[
+    \begin{split}
+      \bar{X}_n + \frac{1}{n+1} (X_{n+1} - \bar{X}_n) &= \frac{1}{n} \sumin{X_i} + \frac{1}{n+1} (X_{n+1} - \frac{1}{n} \sumin{X_i})\\
+      &= \frac{(n+1) \sumin{X_i} + n X_{n+1} - \sumin{X_i}}{n (n+1)}\\
+      &= \frac{n \sumin{X_i} + n X_{n+1}}{n (n+1)}\\
+      &= \frac{\sumxy{i}{n+1}{X_i}}{n (n+1)}\\
+      &= \frac{1}{n+1} \sumxy{i}{n+1}{X_i}\\
+      &= \bar{X}_{n+1}
+    \end{split}
+  \]
+  
+  (2)
+  \[
+    \begin{split}
+      S_n^2 &= \frac{1}{n} (\sumin{(X_i - \bar{X}_n)})^2\\
+      &= \frac{1}{n} (\sumin{X_i^2} - n \bar{X}_n^2)\\
+      \\
+      S_{n+1}^2 &= \frac{1}{n+1} (\sumxy{i}{n+1}{X_i^2} - (n+1) \bar{X}_{n+1}^2)\\
+      \\
+      \text{左边-右边} &= S_{n+1}^2 - \frac{n}{n+1} [S_n^2 + \frac{1}{n+1} (X_{n+1} - \bar{X}_n)^2]\\
+      &= \frac{1}{n+1} [\sumxy{i}{n+1}{X_i^2} - (n+1) \bar{X}_{n+1}^2] - \frac{n}{n+1} [\frac{1}{n} (\sumin{X_i^2} - n \bar{X}_n^2) + \frac{1}{n+1} (X_{n+1} - \bar{X}_n)^2]\\
+      &= \frac{1}{n+1} [\sumxy{i}{n+1}{X_i^2} - (n+1) \bar{X}_{n+1}^2 - \sumin{X_i^2} + n \bar{X}_n^2 - \frac{n}{n+1} (X_{n+1}^2 - 2 X_{n+1} \bar{X}_n + \bar{X}_n^2)]\\
+      &= \frac{1}{n+1} [\frac{1}{n+1} X_{n+1}^2 - (n+1) \bar{X}_{n+1}^2 + \frac{n^2}{n+1} \bar{X}_n^2 + \frac{2n}{n+1} X_{n+1} \bar{X}_n]\\
+      &= \frac{1}{n+1} [\frac{1}{n+1} (X_{n+1}^2 + 2n X_{n+1} \bar{X}_n + n \bar{X}_n^2) - (n+1) \bar{X}_{n+1}^2]\\
+      &= \frac{1}{n+1} [\frac{1}{n+1} (X_{n+1} + n \bar{X}_n)^2 - (n+1) \bar{X}_{n+1}^2]\\
+      &= \frac{1}{n+1} [(n+1) \bar{X}_{n+1}^2 - (n+1) \bar{X}_{n+1}^2]\\
+      &= 0
+    \end{split}
+  \]
+
 
   
 
