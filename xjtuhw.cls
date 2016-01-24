@@ -95,7 +95,7 @@
   \@startsection{section}{1}{\z@}
     {-1.5ex \@plus -.5ex \@minus -.2ex}
     {.5ex \@plus .1ex}
-    {\normalfont\sihao}
+    {\normalfont\xiaosan}
 }
 \makeatother
 
@@ -105,7 +105,7 @@
   \@startsection{subsection}{1}{\z@}
     {-1.25ex \@plus -.5ex \@minus -.2ex}
     {.4ex \@plus .1ex}
-    {\normalfont\xiaosi}
+    {\normalfont\sihao}
 }
 \makeatother
 
@@ -115,7 +115,7 @@
   \@startsection{subsubsection}{1}{\z@}
   {-1ex \@plus -.5ex \@minus -.2ex}
   {.3ex \@plus .1ex}
-  {\normalfont\xiaosi}
+  {\normalfont\sihao}
 }
 \makeatother
 

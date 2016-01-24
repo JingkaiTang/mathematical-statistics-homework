@@ -3,7 +3,7 @@
   \xtl{1.1} 设总体$X \sim N(\mu, \sigma^2)$，$X_{1}$，...，$X_{n}$为总体$X$的一个样本，$\bar{X}$为样本均值，如要
   $$ P\{|\bar{X} - \mu| < 1\} = 0.95 $$
   则样本容量$n$应取多大？
-  
+
   \xsv
   由\xtm{1.2.4}得$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$，所以$\frac{\sqrt{n} \cdot (\bar{X} - \mu)}{\sigma} \sim N(0, 1)$，又由条件$P\{|\bar{X} - \mu| < 1\} = 0.95$可得，$P\{|\frac{\sqrt{n} \cdot (\bar{X} - \mu)}{\sigma}| < \frac{\sqrt{n}}{\sigma}\} = 0.95$，有
   \[ \begin{split}
@@ -15,11 +15,11 @@
   \end{split} \]
 
   \xtl{1.2} 设电子元件的寿命（小时）$X \sim Exp(0.0015)$，独立测试6个元件并记下它们的失效时间，试求：
-  
+
   (1) 至800小时，没有一个元件失效的概率；
-  
+
   (2) 至3000小时，所有元件都失效的概率.
-  
+
   \xsv
   (1) 由题意知$F(x) = e^{-0.0015 \cdot x}$，则
   \[ \begin{split}
@@ -27,24 +27,24 @@
     &= (e^{-0.0015 \times 800})^6\\
     &= e^{-7.2}
   \end{split} \]
-  
+
   (2)
   \[ \begin{split}
     P\{X_{1}, X_{2}, X_{3}, X_{4}, X_{5}, X_{6}; X < 3000\} &= (1 - F(3000))^6\\
     &= (1 - e^{-0.0015 \times 3000})^6\\
     &= (1 - e^{-4.5})^6
   \end{split} \]
-   
+
   \xtl{1.4} 设总体$X$服从对数正态分布，即$X$具有概率密度
-  \[ 
-    f(x) = 
+  \[
+    f(x) =
     \begin{cases}
       \frac{1}{x \sqrt{2\pi} \sigma} e^{-\frac{(\ln{x} - \mu)^2}{2 \sigma^2}},\quad &0 < x < \infty\\
       0,\quad &\text{其他}
     \end{cases}
   \]
   $X_1, ..., X_n$为总体$X$的一个样本，试写出$X_1, ...,X_n$的联合概率密度.
-  
+
   \xsv
   \def\teq14{
     \frac{
@@ -66,11 +66,11 @@
       0,\quad &\text{其他}
     \end{cases}
   \]
-  
+
   \xtl{1.6} 证明下列等式
-  
+
   (1) $\sumin{(X_i - \mu)^2} = \sumin{(X_i - \bar{X})^2 + n(\bar{X} - \mu)^2}$；
-  
+
   (2) $\sumin{(X_i - \bar{X})^2} = \sum\limits_{i=1}^{n}{X_i^2 - n\bar{X}^2}$.
 
   \xsv
@@ -81,7 +81,7 @@
     &= \sumin{(X_i - \bar{X})^2} + 2(\bar{X} - \mu) \cdot \sumin{(X_i - \bar{X}} + \sumin{(\bar{X} - \mu)^2}\\
     &= \sumin{(X_i - \bar{X})^2} + n(\bar{X} - \mu)^2
   \end{split} \]
-  
+
   (2)
   \[ \begin{split}
     \sumin{(X_i - \bar{X})^2} &= \sumin{(X_i - \bar{X})(X_i - \bar{X})}\\
@@ -92,13 +92,13 @@
   \end{split} \]
 
   \xtl{1.7} 设$\bar{X}_n$和$S_n^2$分别为样本 \listXn 的样本均值和样本方差，再抽出一个样品$X_{n+1}$，记样本 \listXx{n+1} 的样本均值和样本方差为分别$\bar{X}_{n+1}$和$S_{n+1}^2$，求证：
-  \[ 
+  \[
     \begin{split}
       \bar{X}_{n+1} &= \bar{X}_n + \frac{1}{n+1} (X_{n+1} - \bar{X}_n)\\
       S_{n+1}^2 &= \frac{n}{n+1} [S_n^2 + \frac{1}{n+1} (X_{n+1} - \bar{X}_n)^2]
     \end{split}
   \]
-  
+
   \xsv
   (1)
   \[
@@ -111,7 +111,7 @@
       &= \bar{X}_{n+1}
     \end{split}
   \]
-  
+
   (2)
   \[
     \begin{split}
@@ -131,7 +131,89 @@
     \end{split}
   \]
 
+  \xtl{1.14} 设总体$X \sim \Gamma (\alpha, \lambda)$，\listXn 为总体的一个样本，试求样本均值$\bar{X}$的概率密度。
 
-  
+  \xsv
+  \[
+    \begin{split}
+      & X_1, X_2, \dots, X_n \sim \Gamma (n \alpha, \lambda)\\
+      & f(x) = \frac{\lambda^{n \alpha}}{\Gamma (n \alpha)} x^{n \alpha - 1} e^{- \lambda x}, \quad x > 0\\
+      & \text{令} t = \frac{x}{n},\\
+      f_{\bar{x}}(t) &= \frac{\lambda^{n \alpha}}{\Gamma (n \alpha)} (nt)^{n \alpha - !} e^{-\lambda nt} |(nt)'|\\
+       &= \frac{(\lambda n)^{n\alpha}}{\Gamma (n\alpha)} t^{n\alpha - 1} e^{-(\lambda n)t}, \quad t>0
+    \end{split}
+  \]
+  则：
+  \[
+    f_{\bar{X}} (x) =
+    \begin{cases}
+      \frac{(\lambda n)^{n\alpha}}{\Gamma (n\alpha)} x^{n\alpha - 1} e^{-(\lambda n)x}, \quad &x>0\\
+      0, \quad &\text{其他}
+    \end{cases}
+  \]
+
+  \xtl{1.17} 证明：若$X \sim \Gamma (\alpha, \lambda)$，则$Y = \frac{X}{k} \sim \Gamma (\alpha, k\lambda)$，其中$k>0$。
+
+  \xsv
+  \[
+    \begin{split}
+      & f(x) = \frac{\lambda^{alpha}}{\Gamma (\alpha)} x^{\alpha -1} e^{-lambda x}, \quad x>0\\
+      & \text{令} t=\frac{x}{k},\\
+      & f_{\frac{X}{k}} (t) = \frac{\lambda^{\alpha}}{\Gamma (\alpha)} (kt)^{\alpha - 1} e^{-\lambda kx} |(kt)'|\\
+      = & \frac{(k\lambda)^{\alpha}}{\Gamma (\alpha)} t^{\alpha - 1} e^{-k\lambda x}\\
+      & \frac{X}{k} \sim \Gamma (\alpha, k\lambda)
+    \end{split}
+  \]
 
 
+  \xtl{1.18} 证明：若$X \sim \beta (a, b)$，则$E(X) = \frac{a}{a+b}, D(X) = \frac{ab}{(a+b)^2(a+b+1)}$。
+
+  \xsv
+  \[
+    \begin{split}
+      f(x) &= \frac{x^{a-1} (1-x)^{b-1}}{B(a, b)}\\
+      E(X) &= \int_0^1 x \frac{x^{a-1} (1-x)^{b-1}}{B(a, b)}dx\\
+      &= \frac{\int_0^1 x^a (1-x)^{b-1}}{B(a, b)}dx\\
+      &= \frac{\frac{\Gamma (a+1) \Gamma (b)}{\Gamma (a+b+1)}}{\frac{\Gamma (a) \Gamma (b)}{\Gamma (a+b)}}\\
+      &= \frac{\frac{a \Gamma (a) \Gamma (b)}{(a+b) \Gamma (a+b)}}{\frac{\Gamma (a) \Gamma (b)}{\Gamma (a+b)}}\\
+      &= \frac{a}{a+b}\\
+    \end{split}
+  \]
+
+  \[
+    \begin{split}
+      E(X^2) &= \int_0^1 x^2 \frac{x^{a-1} (1-x)^(b-1)}{B(a, b)}dx\\
+      &= \frac{B(a+2, b)}{B(a, b)}\\
+      &= \frac{\frac{\Gamma (a+2) \Gamma (b)}{\Gamma (a+b+2)}}{\frac{\Gamma (a) \Gamma (b)}{\Gamma (a+b)}}\\
+      &= \frac{a(a+1)}{(a+b+1)(a+b)}\\
+    \end{split}
+  \]
+
+  \[
+    \begin{split}
+      D(X) &= E(X^2) - [E(X)]^2\\
+      &= \frac{a(a+1)}{(a+b)(a+b+1)} - (\frac{a}{a+b})^2\\
+      &= \frac{a(a+1)(a+b) - a^2(a+b+1)}{(a+b)^2 (a+b+1)}\\
+      &= \frac{ab}{(a+b)^2(a+b+1)}\\
+    \end{split}
+  \]
+
+
+  \xtl{1.19} 证明：若$X \sim F(n, m)$，则$Y = \frac{\frac{n}{m} X}{1+\frac{n}{m} X} \sim \beta (\frac{n}{2}, \frac{m}{2})$。
+
+  \xsv
+  \[
+    X \sim F(n, m),
+    f(x) = \frac{\Gamma (\frac{n+m}{2})}{\Gamma (\frac{n}{2}) \Gamma (\frac{m}{2})} \frac{n}{m} (\frac{n}{m} x)^{\frac{n}{2} - 1} (1+\frac{n}{m} x)^{-\frac{n+m}{2}}, \quad x>0
+  \]
+
+  \[
+    \begin{split}
+      Y &= \frac{\frac{n}{m} X}{1+\frac{n}{m} X}\\
+      f_Y (y) &= \frac{(\frac{n}{m})^{\frac{n}{2}} \Gamma (\frac{n+m}{2})}{\Gamma (\frac{n}{2}) \Gamma (\frac{m}{2})} (\frac{m}{n} \frac{y}{1-y})^{\frac{n}{2} - 1} (1+\frac{y}{1-y})^{-\frac{n+m}{2}} \frac{m}{n} \frac{1}{(1-y)^2}\\
+      &= \frac{\Gamma (\frac{n+m}{2})}{\Gamma (\frac{n}{2}) \Gamma (\frac{m}{2})} y^{\frac{n}{2} - 1} (1-y)^{\frac{m}{2} - 1}\\
+      &= \frac{y^{\frac{n}{2} - 1} (1-y)^{\frac{m}{2} - 1}}{B(\frac{n}{2}, \frac{m}{2})}\\
+    \end{split}
+  \]
+
+  $$Y = \frac{\frac{n}{m} X}{1+\frac{n}{m} X} \sim \beta (\frac{n}{2}, \frac{m}{2})$$
