@@ -1,0 +1,71 @@
+\section{参数估计}
+
+  \xtl{2.1} 设 \listXn 是来自总体$X$的样本，试求下列总体分布中未知参数的矩估计量，
+
+  (1) 总体$X \sim Exp(\lambda)$，其中$\lambda > 0$未知；
+
+  (2) 总体$X \sim U(a, b)$，其中$a<b, a,b$未知；
+
+  (3) 总体$X$具有概率密度
+  \[
+    f(x) =
+    \begin{cases}
+      \theta x^{\theta - 1}, \quad &0< x <1\\
+      0, \quad &\text{其他}
+    \end{cases}
+  \]
+  其中$\theta > 0$未知；
+
+  (4) 总体$X$具有概率密度
+  \[
+    f(x) =
+    \begin{cases}
+      \frac{\beta^k}{(k-1)!} x^{k-1} e{-\beta x}, \quad &x>0\\
+      0, \quad &x\le 0
+    \end{cases}
+  \]
+  其中$k$是已知正整数，$\beta >0$为未知参数；
+
+  (5) 总体$X$具有概率密度
+  \[
+    f(x) =
+    \begin{cases}
+      \lambda e^{-\lambda (x-a)}, \quad &x>a\\
+      0, \quad &x\le a
+    \end{cases}
+  \]
+  其中$\lambda > 0$，$\lambda,a$是未知参数；
+
+  (6) 总体$X \sim B(m, p)$，其中$m$已知，$0<p<1$，$p$为未知参数；
+
+  \xsv
+  (1) $$a_1 = \mu = \frac{1}{\lambda}, \hat{\lambda} = \frac{1}{\bar{X}}$$
+
+  (2) $$a_1 = \mu = \frac{a+b}{2}, a_2 = \sigma^2 + \mu^2 = \frac{(b-a)^2}{12} + (\frac{a+b}{2})^2$$
+  \[
+    \begin{cases}
+      \hat{a} = \bar{X} - \sqrt{3} S\\
+      \hat{b} = \bar{X} + \sqrt{3} S
+    \end{cases}
+  \]
+
+  (3) $$a_1 = \mu = \int_0^1 x \theta x^{\theta - 1}dx = \frac{\theta}{\theta + 1}$$
+  $$\hat{\theta} = \frac{\bar{X}}{1-\bar{X}}$$
+
+  (4) $$a_1 = \mu = \int_0^{+\infty} x \frac{\beta^k}{(k-1)!} x^{k-1} e^{-\beta x} dx$$
+  $$\hat{beta} = \frac{k}{\bar{x}}$$
+
+  (5) $$a_1 = \mu = \int_a^{+\infty} x \lambda e^{-\lambda (x-a)} dx$$
+  $$a_2 = \sigma^2 + \mu^2 = \int_a^{+\infty} x^2 \lambda e^{-\lambda (x-a)} dx$$
+  \[
+    \begin{cases}
+      \hat{\lambda} = \frac{1}{S}\\
+      \hat{a} = \bar{X} - S
+    \end{cases}
+  \]
+
+  (6) $$ a_1 = \mu = mp $$
+  $$m\hat{p} = a_1 = \bar{X}$$
+  $$\hat{p} = \frac{\bar{X}}{m}$$
+
+  
