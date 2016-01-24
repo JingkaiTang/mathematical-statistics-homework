@@ -217,3 +217,21 @@
   \]
 
   $$Y = \frac{\frac{n}{m} X}{1+\frac{n}{m} X} \sim \beta (\frac{n}{2}, \frac{m}{2})$$
+
+  \xtl{1.20} 已知$X \sim t(n)$，求证：$X^2 \sim F(1, n)$。
+
+  \xsv
+  \[
+    X \sim t(n),
+    f(x) = \frac{\Gamma (\frac{n+1}{2})}{\sqrt{n\pi} \Gamma (\frac{n}{2})} (1+\frac{x^2}{n})^{-\frac{n+1}{2}}
+  \]
+
+  \[
+    \begin{split}
+    \text{令} t&=x^2,\\
+    f_{X^2} (t) &= \frac{\Gamma (\frac{n+1}{2})}{\sqrt{n\pi} \Gamma (\frac{n}{2})} t^{-\frac{1}{2}} (1+\frac{t}{n})^{-\frac{n+1}{2}}\\
+    &= \frac{\Gamma (\frac{n+1}{2})}{\Gamma (\frac{1}{2}) \Gamma (\frac{n}{2})} \frac{1}{n} (\frac{x}{n})^{-\frac{1}{2}} (1+\frac{x}{n})^{-\frac{n+1}{2}}
+  \end{split}
+  \]
+  
+  $$X^2 \sim F(1, n)$$
