@@ -28,14 +28,17 @@
 \newcommand{\prodxy}[2]{\prodxyz{#1}{1}{#2}}
 \newcommand{\prodin}{\prodxy{i}{n}}
 % list
-\newcommand{\listXx}[1]{$X_1, X_2, \dots, X_{#1}$}
+\newcommand{\listxx}[2]{${#1}_1, {#1}_2, \dots, {#1}_{#2}$}
+\newcommand{\listXx}[1]{\listxx{X}{#1}}
 \newcommand{\listXn}{\listXx{n}}
+\newcommand{\listYx}[1]{\listxx{Y}{#1}}
+\newcommand{\listYn}{\listYx{n}}
 
 \begin{document}
 
   \xjtucover{XJTU.pdf}
   \xjtutoc
-  
+
   \input{chapters/chapter1.tex}
 
 \end{document}

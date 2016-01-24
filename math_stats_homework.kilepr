@@ -31,21 +31,21 @@ Indentation Mode=normal
 Mode=
 
 [document-settings,item:chapters/chapter1.tex]
-Bookmarks=89
+Bookmarks=89,209
 Encoding=UTF-8
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:hw.tex]
-Bookmarks=35
+Bookmarks=35,31
 Encoding=UTF-8
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
 
 [document-settings,item:xjtuhw.cls]
-Bookmarks=0
+Bookmarks=0,117
 Encoding=UTF-8
 Highlighting=LaTeX
 Indentation Mode=normal
@@ -83,10 +83,10 @@ order=-1
 
 [item:chapters/chapter1.tex]
 archive=true
-column=19
+column=2
 encoding=UTF-8
 highlight=LaTeX
-line=208
+line=250
 mode=LaTeX
 open=true
 order=1
@@ -150,10 +150,10 @@ ViRegisterFlags=0,0,0
 ViRegisterNames=-,0,^
 
 [view-settings,view=0,item:chapters/chapter1.tex]
-CursorColumn=19
-CursorLine=208
+CursorColumn=2
+CursorLine=250
 JumpList=
-ViMarks=.,210,0,<,133,16,>,133,48,[,210,0,],210,0,^,209,0,a,89,0
+ViMarks=.,250,2,<,133,16,>,133,48,[,249,2,],250,2,^,249,2,a,89,0,b,209,0
 ViRegisterContents=\n,$X \\\\sim \\\\Gamma (\\\\alpha\\, \\\\lambda)$,
 ViRegisterFlags=1,0,0
 ViRegisterNames=-,0,^
@@ -162,7 +162,7 @@ ViRegisterNames=-,0,^
 CursorColumn=16
 CursorLine=24
 JumpList=
-ViMarks=.,30,0,<,22,0,>,32,0,[,30,0,],30,0,^,31,30,a,35,0
+ViMarks=.,30,0,<,22,0,>,32,0,[,30,0,],30,0,^,31,30,a,35,0,b,31,0
 ViRegisterContents=\n,$X \\\\sim \\\\Gamma (\\\\alpha\\, \\\\lambda)$,
 ViRegisterFlags=1,0,0
 ViRegisterNames=-,0,^
@@ -171,7 +171,7 @@ ViRegisterNames=-,0,^
 CursorColumn=12
 CursorLine=59
 JumpList=
-ViMarks=.,117,19,<,0,0,>,0,0,[,117,15,],117,20,^,117,20,a,0,0
+ViMarks=.,117,19,<,0,0,>,0,0,[,117,15,],117,20,^,117,20,a,0,0,b,117,0
 ViRegisterContents=\n,$X \\\\sim \\\\Gamma (\\\\alpha\\, \\\\lambda)$,
 ViRegisterFlags=1,0,0
 ViRegisterNames=-,0,^

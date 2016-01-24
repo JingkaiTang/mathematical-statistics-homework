@@ -233,5 +233,36 @@
     &= \frac{\Gamma (\frac{n+1}{2})}{\Gamma (\frac{1}{2}) \Gamma (\frac{n}{2})} \frac{1}{n} (\frac{x}{n})^{-\frac{1}{2}} (1+\frac{x}{n})^{-\frac{n+1}{2}}
   \end{split}
   \]
-  
+
   $$X^2 \sim F(1, n)$$
+
+
+  \xtl{1.24} 设 \listXx{n+1} 是来自正态总体$N(\mu, \sigma^2)$的样本，试求统计量$$Y=\frac{X_{n+1} - X_n}{S_n^*} \sqrt{\frac{n}{n+1}}$$的抽样分布。
+
+  \xsv
+  \[
+    \begin{split}
+      X_{n+1} - \bar{X}_n \sim N(0, \frac{n+1}{n} \sigma^2)\\
+      \frac{X_{n+1} - \bar{X}_n}{\sigma} \sqrt{\frac{n}{n+1}} \sim N(0, 1)\\
+      \frac{(n-1) {S^{*}}^2}{\sigma^2} \sim \chi^2 (n-1)\\
+      Y=\frac{X_{n+1} - X_n}{S_n^*} \sqrt{\frac{n}{n+1}} = \frac{\frac{X_{n+1}-\bar{X}_n}{\sigma} \sqrt{\frac{n}{n+1}}}{\sqrt{\frac{(n-1){S^*}^2}{\sigma^2}}/(n-1)} \sim t(n-1)\\
+    \end{split}
+  \]
+
+
+  \xtl{1.25} 设 \listXx{n_1} 和 \listYx{n_2} 分别为正态总体 $N(\mu_1, \sigma_1^2)$ 和 $N(\mu_2, \sigma_2^2)$ 的两个独立样本，试证：$$\frac{n_2 \sigma_2^2 \sumxy{i}{n_1}{(X_i-\mu_1)^2}}{n_1 \sigma_1^2 \sumxy{i}{n_2}{(Y_i-\mu_2)^2}} \sim F(n_1, n_2)$$
+
+  \xsv
+  \[
+    \frac{X_i-\mu_1}{\sigma_1} \sim N(0, 1), \frac{Y_i-\mu_2}{\sigma_2} \sim N(0, 1)
+  \]
+
+  \[
+    \sumxy{i}{n_1}{(\frac{X_i-\mu_1}{\sigma_1})^2} \sim \chi^2 (n_1), \sumxy{i}{n_2}{(\frac{Y_i-\mu_2}{\sigma_2})^2} \sim \chi^2 (n_2)
+  \]
+
+  \[
+    \frac{\sumxy{i}{n_1}{(\frac{X_i-\mu_1}{\sigma_1})^2} / n_1}{\sumxy{i}{n_2}{(\frac{Y_i-\mu_2}{\sigma_2})^2} / n_2} \sim F(n_1, n_2)
+  \]
+
+  $$\frac{n_2 \sigma_2^2 \sumxy{i}{n_1}{(X_i-\mu_1)^2}}{n_1 \sigma_1^2 \sumxy{i}{n_2}{(Y_i-\mu_2)^2}} \sim F(n_1, n_2)$$
